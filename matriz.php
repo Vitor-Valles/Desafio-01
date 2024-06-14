@@ -3,7 +3,7 @@ session_start();
 
 $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : '';
 $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-$senha = isset($_SESSION['senha1']) ? $_SESSION['senha1'] : '';
+$senha = isset($_SESSION['senha']) ? $_SESSION['senha'] : '';
 $nomeT = isset($_SESSION['nomeT']) ? $_SESSION['nomeT'] : '';
 $numC = isset($_SESSION['numC']) ? $_SESSION['numC'] : '';
 $cvv = isset($_SESSION['cvv']) ? $_SESSION['cvv'] : '';
@@ -51,5 +51,4 @@ foreach ($dados_usuario['perfil']['generos_preferidos'] as $genero) {
     echo "<li>$genero</li>";
 }
 echo "</ul>";
-
 ?>

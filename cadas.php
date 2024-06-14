@@ -38,12 +38,6 @@
                 <input type="password" name="senha2" id="senha2" placeholder="Repita a sua Senha" required>
             <hr>
             <button type="submit">Avançar</button>
-        </form>
-        <?php
-
-
-
-        ?>
-        
+        </form>        
     </body>
     </html>

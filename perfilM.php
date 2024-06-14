@@ -2,12 +2,10 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $_SESSION['nomeT'] = $_POST['nomeT'];
-    $_SESSION['numC'] = $_POST['numC'];
-    $_SESSION['cvv'] = $_POST['cvv'];
-    $_SESSION['dV'] = $_POST['dV'];
-    $_SESSION['cpf'] = $_POST['cpf'];
-    $_SESSION['plano'] = $_POST['plano'];
+    $_SESSION['nomeP'] = $_POST['nomeP'];
+    $_SESSION['genero'] = isset($_POST['genero']) ? $_POST['genero'] : [];
+    header("Location: matriz.php"); // Redireciona para a próxima página
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -15,14 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuario</title>
+    <title>Perfil do Usuário</title>
 </head>
 <body>
-<form action="matriz.php" method="post">
-        <label>Nome seu do perfil</label>
-            <input type="text" name="nomeP" id="nomeP" placeholder="Digite o nome do seu perfil" required>
+    <form method="post" action="">
+        <label>Nome do seu perfil</label>
+        <input type="text" name="nomeP" id="nomeP" placeholder="Digite o nome do seu perfil" required>
         <hr>
-        <label>Selecione as categorias de preferencias</label>
+        <label>Selecione as categorias de preferências</label>
         <br>
         <input type="checkbox" id="acao" name="genero[]" value="acao">
         <label for="acao">Ação</label><br>
@@ -66,10 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="checkbox" id="guerra" name="genero[]" value="guerra">
         <label for="guerra">Guerra</label><br>
 
-
         <button type="submit">Avançar</button>
-        
-        </form>
-    
+    </form>
 </body>
 </html>
